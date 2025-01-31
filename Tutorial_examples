@@ -1,0 +1,419 @@
+'''name =input('what is ur name? ')
+fav_color =input('what is ur fav color? ')
+print( name + ' likes ' + fav_color)
+-------
+weight = input('what is ur weight in lb? ')
+lb_to_kg = int(weight)/ 2.205
+print('your weight in kgs= ', lb_to_kg)
+--------
+course = 'python is good'
+print(course.replace('is', 'are'))
+print(course)
+-----
+weight = input('Weight: ')
+choice = input('(L)bs or (K)g: ')
+if choice == 'k' or choice == 'K':
+    wg= int(weight) * 2.205;
+    print('you are ' f'{round(wg)}' + ' pounds')
+elif choice == 'l' or choice == 'L':
+    wg = int(weight) / 2.205;
+    print('you are ' f'{round(wg)}' ' kilos')
+---------
+
+i=0
+while i<3:
+    n=int(input('Guess: ' ))
+    i= i+1;
+    if n == 9:
+        print('You Win')
+        break
+else:
+    print('You fail')
+--------
+
+started = False
+while 1:
+    i=input('> ')
+    if i == 'start':
+        if started:
+            print('car already started')
+        else:
+            started=True
+            print('car started')
+    elif i == 'help':
+        print('help details')
+    elif i =='stop':
+        print('car stopped')
+    elif i == 'quit':
+        print('quit')
+        break
+    else:
+        print("i don't understand")
+----
+numbers = [3,4,5,6,1]
+max = numbers[0]
+for number in numbers:
+    if number>max:
+        max=number;
+print(max)
+
+----------
+
+numbers =[4,3,4,5,5,6,1,1,1,1]
+uniques=[]
+for number in numbers:
+    if number not in  uniques:
+        uniques.append(number)
+print(uniques)
+-----------------------
+
+
+phone= input('Phone:')
+numbers={
+    "1": "one",
+    "2": "two",
+    "3": "three"
+}
+output =""
+for ch in phone:
+    output+= numbers.get(ch, "X")+ " "
+print(output)
+-------------------------
+message = input(">")
+words =message.split(' ')
+emojis ={
+    ":)": "😁",
+    ":(": "😔",
+}
+output= ""
+for word in words:
+    output += emojis.get(word,  word)+ " "
+print(output)
+----------------------
+
+def emoji_convert(message):
+    words = message.split(" ")
+    emojis = {
+        ":)" :"😁",
+        ":(" : "😔",
+    }
+    output = ''
+    for word in words:
+        output +=emojis.get(word, word)+" "
+    return output
+
+
+message = input(">")
+print(emoji_convert(message))
+---------------------------
+import utils
+from utils import find_max
+numbers = [3, 4, 15, 6, 1]
+max = find_max(numbers)
+print(max)
+'''In this code, the line max = find_max(numbers)
+is calling the find_max function with the argument numbers,
+which is a list of numbers [3, 4, 15, 6, 1]. The function
+returns the maximum number in the list, which is 15. This
+value is then assigned to the variable max.So after this
+line is executed, the value of max will be 15.'''
+----------------------------------
+def calc_shipping():
+    print("calc")
+
+from ecommerce.shipping import calc_shipping
+from ecommerce import shipping
+shipping.calc_shipping()
+calc_shipping()
+--------------------------------
+import  random
+for i in range(3):
+    print(random.random())
+    print(random.randint(12, 45))
+members =['mike', 'sai', 'mosh', 'jk']
+leader = random.choice(members)
+print(leader)
+---------------------------------------
+import random
+
+
+class Dice:
+    def roll(self):
+        first=random.randint(1, 6)
+        second=random.randint(1, 6)
+        return first, second
+
+dice1= Dice()
+print(dice1.roll())
+-------------------------------------
+Infosys exercise 1:
+
+numbers = int(input("enter the number: "))
+
+if (numbers % 3 == 0 and numbers % 5 == 0):
+    print("Zoom")
+
+elif (numbers%3== 0):
+    print("Zip")
+
+elif(numbers%5 == 0):
+    print("Zap")
+
+else:
+    print("Invalid")
+------------------------------------------
+Infosys exercise 2;
+for number in range(1,5):
+    print ("The current number is ",number)
+print("---------------------------")
+for number in range(1,7,2):
+    print ("The current number is ",number)
+print("---------------------------")
+for number in range(5,0,-1):
+    print ("The current number is ",number)
+----------------------------------------------
+Infosys exercise 3:
+given_number = input("enter the value")
+
+added=0
+for adding in given_number:
+    added += int(adding);
+print(added)
+------------------------------------------------
+Infosys exercise 4: leap year
+
+
+year = int(input('enter the year to check lea yr or not= '))
+
+
+def leapyear(yr):
+
+    lp = yr % 4
+    lp1 = yr % 100
+    lp2 = yr % 400
+    if lp == 0 and lp1 != 0 or lp2 == 0:
+        print("It's a leap year")
+    else:
+        print("Not a leap year")
+
+
+leapyear(year)
+----------------------------------------------
+Infosys exercise 5: max number
+
+numbers = [8, 7, 89]
+
+
+def max_no(numb):
+    maximum = 0
+    for n in numbers:
+        if n > maximum:
+            maximum = n
+    return maximum
+
+
+print(max_no(numbers))
+----------------------------------------------------
+Infosys exercise 6: prime number
+
+def is_prime(given_number):
+    if given_number <2:
+        return False
+    for n in range(2, given_number):
+        if given_number%n == 0:
+            print("not prime")
+            return False
+    print("it is prime number")
+
+
+numbers = int(input("enter a number"))
+is_prime(numbers)
+-----------------------------------------------
+Infosys exercise 7: fibonacci series
+
+def fib(given_number):
+    initial_value = 0
+    next_value = 1
+    print(initial_value)
+    print(next_value)
+    for i in range(0, given_number):
+        adding = next_value + initial_value
+        initial_value = next_value
+        next_value = adding
+        print(adding)
+        if adding == given_number:
+            break
+
+
+number = int(input("enter the fibo number= "))
+fib(number)
+--------------------------------
+Infosys exercise 8: Hiking percentage salary by job level.
+def Hike(job_level, salary):
+    if job_level == 3:
+        hiked_salary = salary * 15
+        hiked_percentage = hiked_salary/100
+        print(salary+hiked_percentage)
+    elif job_level == 4:
+        hiked_salary = salary * 7
+        hiked_percentage = hiked_salary/100
+        print(salary+hiked_percentage)
+    elif job_level == 5:
+        hiked_salary = salary*5
+        hiked_percentage = hiked_salary/100
+        print(salary+hiked_percentage)
+    else:
+        hiked_percentage = 0
+        print(hiked_percentage)
+
+
+salary = int(input("enter the salary of an employee= "))
+job_level = int(input("enter the level of an employee= "))
+
+Hike(job_level, salary)
+----------------------------------------------
+# random dice no with tuple.
+import random
+
+
+class Dice:
+    def roll(self):
+
+        dice = (random.randint(1, 6), random.randint(1, 6))
+        return dice
+
+
+d = Dice()
+print(d.roll())
+-----------------------------------------------
+import openpyxl as xl
+from openpyxl.chart import BarChart, Reference
+
+
+def process_workbook(filename):
+    wb= xl.load_workbook('filename')
+    sheet= wb ['Sheet1']
+    cell = sheet['a1']
+    cell = sheet.cell(1,1)
+    print(cell.value)
+    print(sheet.max_row)
+
+    for row in range(2, sheet.max_row+1):
+        cell = sheet.cell(row,3)
+        corrected_price = cell.value *0.8
+        corrected_price_cell= sheet.cell(row,4)
+        corrected_price_cell.value =corrected_price
+
+    values = Reference(sheet, min_row=2,max_row=sheet.max_row, min_col=4, max_col=4)
+    chart = BarChart()
+    chart.add_data(values)
+    sheet.add_chart(chart,'e2')
+    wb.save('filename')
+------------------------------------------------------
+# hackerrank list concept:
+if __name__ == '__main__':
+    N = int(input())
+    list_=[ ]
+    while N!=0:
+        command, *args = input().split()
+        if command=='insert':
+            i = int(args[0])
+            e = int(args[1])
+            list_.insert(i,e)
+        elif command=='print':
+            print(list_)
+        elif command == 'remove':
+            e=int(args[0])
+            list_.remove(e)
+        elif command == 'append':
+            e =int(args[0])
+            list_.append(e)
+        elif command == 'sort':
+            list_.sort()
+        elif command == 'pop':
+            list_.pop()
+        elif command == 'reverse':
+            list_.reverse()
+        N=N-1
+-----------------------------------------------------------
+#Given an array of integers, calculate the ratios of its
+elements that are positive, negative, and zero.
+
+def plusMinus(arr):
+    # Write your code here
+    positive_no =0
+    negative_no =0
+    zero_no =0
+    for i in range(len(arr)):
+        if arr[i]> 0:
+            positive_no+=1
+        elif arr[i]< 0:
+            negative_no+=1
+        elif arr[i] == 0:
+            zero_no+=1
+
+    print(float(format(positive_no/n,'.6f' )))
+    print(float(format(negative_no / n, '.6f')))
+    print(float(format(zero_no/ n, '.6f')))
+-------------------------------------------------------------
+#minmax
+def miniMaxSum(arr):
+    min_ =float('inf')
+    max_ =float('-inf')
+    for i in range(len(arr)):
+        current = arr[i]
+        arr[i] =0
+        total =sum(arr)
+        max_=max(max_,total)
+        min_=min(min_,total)
+        arr[i]= current
+    return min_ , max_
+
+if __name__ == '__main__':
+
+    arr = list(map(int, input().rstrip().split()))
+
+    result = miniMaxSum(arr)
+    print(*result)nmax
+-----------------------------------------------------------------
+#queries comparing:
+import math
+import os
+import random
+import re
+import sys
+
+def matchingStrings(strings, queries):
+    match_counts = []
+    for query in queries:
+        count = 0
+        for string in strings:
+            if string == query:
+                count += 1
+        match_counts.append(count)
+    return match_counts
+
+if __name__ == '__main__':
+    # Read the number of strings
+    strings_count = int(input().strip())
+
+    # Read the strings
+    strings = []
+    for _ in range(strings_count):
+        strings_item = input()
+        strings.append(strings_item)
+
+    # Read the number of queries
+    queries_count = int(input().strip())
+
+    # Read the queries
+    queries = []
+    for _ in range(queries_count):
+        queries_item = input()
+        queries.append(queries_item)
+
+    # Call the matchingStrings function and print the results
+    res = matchingStrings(strings, queries)
+    for count in res:
+        print(count)
+---------------------------------------------------------
